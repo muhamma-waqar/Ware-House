@@ -1,0 +1,11 @@
+D:\Practic Project\WareHouse\src\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+D:\Practic Project\WareHouse\src\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+D:\Practic Project\WareHouse\src\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+D:\Practic Project\WareHouse\src\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
