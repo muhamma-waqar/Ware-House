@@ -1,3 +1,11 @@
 .vs/*
-src/*
-*.cs
+src/Application/obj/*
+src/Application/bin/*
+src/Domain/bin/*
+src/Domain/obj/*
+src/Infrastructure/obj/*
+src/Infrastructure/bin/*
+src/SampleData/SampleData/bin/*
+src/SampleData/SampleData/obj/*
+src/WebAPI/bin/*
+src/WebAPI/obj/*
