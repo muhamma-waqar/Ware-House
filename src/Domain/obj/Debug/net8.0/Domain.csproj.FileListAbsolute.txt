@@ -9,15 +9,3 @@ D:\Practic Project\WareHouse\src\Domain\obj\Debug\net8.0\Domain.dll
 D:\Practic Project\WareHouse\src\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Practic Project\WareHouse\src\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Practic Project\WareHouse\src\Domain\obj\Debug\net8.0\ref\Domain.dll
-D:\Ware-House\src\Domain\bin\Debug\net8.0\Domain.deps.json
-D:\Ware-House\src\Domain\bin\Debug\net8.0\Domain.dll
-D:\Ware-House\src\Domain\bin\Debug\net8.0\Domain.pdb
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.dll
-D:\Ware-House\src\Domain\obj\Debug\net8.0\refint\Domain.dll
-D:\Ware-House\src\Domain\obj\Debug\net8.0\Domain.pdb
-D:\Ware-House\src\Domain\obj\Debug\net8.0\ref\Domain.dll
