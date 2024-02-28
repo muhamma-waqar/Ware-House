@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SampleData
-build_property.ProjectDir = D:\Practic Project\WareHouse\My-WareHouse\src\SampleData\SampleData\
+build_property.ProjectDir = D:\Ware-House\src\SampleData\SampleData\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

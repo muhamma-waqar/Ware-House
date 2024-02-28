@@ -9,3 +9,12 @@ D:\Practic Project\WareHouse\src\Application\obj\Debug\net8.0\Application.dll
 D:\Practic Project\WareHouse\src\Application\obj\Debug\net8.0\refint\Application.dll
 D:\Practic Project\WareHouse\src\Application\obj\Debug\net8.0\Application.pdb
 D:\Practic Project\WareHouse\src\Application\obj\Debug\net8.0\ref\Application.dll
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.sourcelink.json
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.dll
+D:\Ware-House\src\Application\obj\Debug\net8.0\refint\Application.dll
+D:\Ware-House\src\Application\obj\Debug\net8.0\Application.pdb

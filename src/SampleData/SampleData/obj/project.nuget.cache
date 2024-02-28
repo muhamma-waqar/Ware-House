@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pCFuGaat1RMO3gEzPaijFkks996basen4kdv0nMTzxwIer4q9MLin6RKOVUiYqTVw6Cnwq56luj0H9qhZy30Ag==",
+  "dgSpecHash": "SaxcD705+rYlywRCSxjmyI0z7XYC3lN9+UvBGu4KdQ5rOBlY4hjo25aIqucblE9sd6mnPdYGcCticWoiFZ34zQ==",
   "success": true,
-  "projectFilePath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\SampleData\\SampleData\\SampleData.csproj",
+  "projectFilePath": "D:\\Ware-House\\src\\SampleData\\SampleData\\SampleData.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

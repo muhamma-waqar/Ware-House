@@ -5853,19 +5853,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mwaqar\\.nuget\\packages\\": {}
+    "C:\\Users\\WAQAR\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "D:\\Ware-House\\src\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\mwaqar\\.nuget\\packages\\",
-      "outputPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Infrastructure\\obj\\",
+      "projectPath": "D:\\Ware-House\\src\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\WAQAR\\.nuget\\packages\\",
+      "outputPath": "D:\\Ware-House\\src\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mwaqar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WAQAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5879,14 +5879,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Application\\Application.csproj": {
-              "projectPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Application\\Application.csproj"
+            "D:\\Ware-House\\src\\Application\\Application.csproj": {
+              "projectPath": "D:\\Ware-House\\src\\Application\\Application.csproj"
             },
-            "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\Domain\\Domain.csproj"
+            "D:\\Ware-House\\src\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Ware-House\\src\\Domain\\Domain.csproj"
             },
-            "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\SampleData\\SampleData\\SampleData.csproj": {
-              "projectPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\SampleData\\SampleData\\SampleData.csproj"
+            "D:\\Ware-House\\src\\SampleData\\SampleData\\SampleData.csproj": {
+              "projectPath": "D:\\Ware-House\\src\\SampleData\\SampleData\\SampleData.csproj"
             }
           }
         }
@@ -5895,6 +5895,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5968,7 +5973,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

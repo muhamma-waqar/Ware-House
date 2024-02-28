@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\WebAPI\\WebAPI.csproj": {}
+    "D:\\Ware-House\\src\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\WebAPI\\WebAPI.csproj": {
+    "D:\\Ware-House\\src\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "D:\\Ware-House\\src\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\mwaqar\\.nuget\\packages\\",
-        "outputPath": "D:\\Practic Project\\WareHouse\\My-WareHouse\\src\\WebAPI\\obj\\",
+        "projectPath": "D:\\Ware-House\\src\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\WAQAR\\.nuget\\packages\\",
+        "outputPath": "D:\\Ware-House\\src\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mwaqar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WAQAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -68,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
