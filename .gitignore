@@ -1,12 +1,13 @@
 
-.vs/*
-src/Application/obj/*
-src/Application/bin/*
-src/Domain/obj/*
-src/Domain/bin/*
-src/Infrastructure/obj/*
-src/Infrastructure/bin/*
-src/SampleData/SampleData/obj/*
-src/SampleData/SampleData/bin/*
-src/WebAPI/obj/*
-src/WebAPI/bin/*
+.vs/
+src/Application/obj/
+src/Application/bin/
+src/Domain/obj/
+src/Domain/bin/
+src/Infrastructure/obj/
+src/Infrastructure/bin/
+src/SampleData/SampleData/obj/
+src/SampleData/SampleData/bin/
+src/WebAPI/obj/
+src/WebAPI/bin/
+src/WebAPI/obj/
