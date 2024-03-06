@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ApplicationDependencies\DataAccess\Repositories\**" />
-    <EmbeddedResource Remove="ApplicationDependencies\DataAccess\Repositories\**" />
-    <None Remove="ApplicationDependencies\DataAccess\Repositories\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\SampleData\SampleData\SampleData.csproj" />

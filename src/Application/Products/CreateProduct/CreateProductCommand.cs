@@ -30,7 +30,7 @@ namespace Application.Products.CreateProduct
         {
             var product = new Product(
                 name: request.Name.Trim(),
-                descriptionm: request.Description.Trim(),
+                description: request.Description.Trim(),
                 price: new Money(request.PriceAmount, ProductInvariants.DefaultPriceCurrency),
                 mass: new Mass(request.MassValue, ProductInvariants.DefaultMassUnit));
 

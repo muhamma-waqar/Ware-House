@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Identity.Model
 {
-    public class ApplicatonUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
     }
 }

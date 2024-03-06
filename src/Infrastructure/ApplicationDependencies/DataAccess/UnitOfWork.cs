@@ -1,43 +1,94 @@
 ﻿using Application.Common.Dependencies.DataAccess;
 using Application.Common.Dependencies.DataAccess.Repositories;
+using Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.ApplicationDependencies.DataAccess
+internal class UnitOfWork : IUnitOfWork
 {
-    internal class UnitOfWork : IUnitOfWork
+    private readonly ApplicationDbContext _dbContext;
+    private IDbContextTransaction? _currentTransaction;
+
+    public IPartnerRepository Partners { get; }
+    public IProductRepository Products { get; }
+    public ITransactionRepository Transactions { get; }
+
+    public UnitOfWork(ApplicationDbContext dbContext, IPartnerRepository partners, IProductRepository products, ITransactionRepository transactions)
     {
-        private readonly Application
+        _dbContext = dbContext;
+        Partners = partners;
+        Products = products;
+        Transactions = transactions;
+    }
 
-        public IPartnerRepository Partners { get; }
+    public void Dispose()
+        => _dbContext.Dispose();
 
-        public IProductRepository Products { get; }
+    /// <summary>
+    /// Saves all changes to tracked entities.
+    /// If an explicit transaction has not yet been started, the
+    /// save operation itself is executed in a new transaction.
+    /// </summary>
+    public Task SaveChanges()
+        => _dbContext.SaveChangesAsync();
 
-        public ITransactionRepository Transactions { get; }
+    public bool HasActiveTransaction
+        => _currentTransaction is not null;
 
-        public bool HasActiveTransaction => _currentTransaction is not null;
-
-        public Task BeginTransactionAsync()
+    public async Task BeginTransactionAsync()
+    {
+        if (_currentTransaction is not null)
         {
-            throw new NotImplementedException();
+            throw new InvalidOperationException("A transaction is already in progress.");
         }
 
-        public Task CommitTransactionAsync()
+        _currentTransaction = await _dbContext.Database.BeginTransactionAsync(IsolationLevel.RepeatableRead);
+    }
+
+    public async Task CommitTransactionAsync()
+    {
+        try
         {
-            throw new NotImplementedException();
+            await _dbContext.SaveChangesAsync();
+
+            _currentTransaction?.Commit();
+        }
+        catch
+        {
+            await RollbackTransactionAsync();
+            throw;
+        }
+        finally
+        {
+            if (_currentTransaction is not null)
+            {
+                await _currentTransaction.DisposeAsync();
+                _currentTransaction = null;
+            }
+        }
+    }
+
+    public async Task RollbackTransactionAsync()
+    {
+        if (_currentTransaction is null)
+        {
+            throw new InvalidOperationException("A transaction must be in progress to execute rollback.");
         }
 
-        public Task RollbackTransactionAsync()
+        try
         {
-            throw new NotImplementedException();
+            await _currentTransaction.RollbackAsync();
         }
-
-        public Task SaveChanges()
+        finally
         {
-            throw new NotImplementedException();
+            await _currentTransaction.DisposeAsync();
+            _currentTransaction = null;
         }
     }
 }

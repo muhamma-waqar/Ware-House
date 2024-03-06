@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Context
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicatonUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Partner> Partners => Set<Partner>();
