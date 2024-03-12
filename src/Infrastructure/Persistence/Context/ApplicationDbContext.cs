@@ -8,6 +8,7 @@ using Infrastructure.Identity.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,12 +32,6 @@ namespace Infrastructure.Persistence.Context
             this._dateTime = dateTime;
 
             ChangeTracker.CascadeDeleteTiming = CascadeTiming.OnSaveChanges;
-        }
-
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
-            _currentUser = null!;
-            _dateTime = null!;
         }
 
         public override int SaveChanges() => SaveChanges(acceptAllChangesOnSuccess: true);
