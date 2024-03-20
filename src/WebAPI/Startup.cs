@@ -1,6 +1,7 @@
 ﻿using WebAPI.API;
 using WebAPI.Authentication;
 using WebAPI.ErrorHandling;
+using WebAPI.Swagger;
 
 namespace WebAPI
 {
@@ -17,6 +18,7 @@ namespace WebAPI
             services.AddMyApi();
             services.AddMyApiAuthDeps();
             services.AddMyErrorHandling();
+            services.AddMySwagger(Configuration);
 
         }
     }

@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="API\V1\**" />
+    <Content Remove="API\V1\**" />
+    <EmbeddedResource Remove="API\V1\**" />
+    <None Remove="API\V1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
@@ -34,7 +41,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="API\V1\" />
+    <Folder Include="Versioning\Interfaces\" />
+    <Folder Include="Versioning\SwaggerConfiguration\" />
   </ItemGroup>
 
 </Project>
