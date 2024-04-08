@@ -11,13 +11,14 @@ namespace WebAPI.Swagger.Filters
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
-            var filterDescriptor = context.ApiDescription.ActionDescriptor.FilterDescriptors;
-            var allowAnonymous = filterDescriptor.Select(filterInfo => filterInfo.Filter).Any(filter => filter is IAllowAnonymousFilter);
-            var hasAuthorizeFilter = filterDescriptor.Select(filterInfo => filterInfo.Filter).Any(filter => filter is AuthorizeFilter);
-            var hasAuthorizeAttribute = context.MethodInfo.DeclaringType!.GetCustomAttributes(true).Any(attr => attr is AuthorizeAttribute)
-                || context.MethodInfo.GetCustomAttributes (true).Any(attr => attr is AuthorizeAttribute);
+            var filterDescripter = context.ApiDescription.ActionDescriptor.FilterDescriptors;
 
-            if((hasAuthorizeFilter || hasAuthorizeAttribute) && !allowAnonymous)
+            var hasAuthorizeFilter = filterDescripter.Select(filterInfo => filterInfo.Filter).Any(filter => filter is AuthorizeFilter);
+            var allowAnonymous = filterDescripter.Select(filterInfo=> filterInfo.Filter).Any(filter => filter is IAllowAnonymousFilter);
+            var hasAuthorizeAttribute = context.MethodInfo.DeclaringType!.GetCustomAttributes(true).Any(attr => attr is AuthorizeAttribute)
+                || context.MethodInfo.GetCustomAttributes(true).Any(attr => attr is AuthorizeAttribute);
+
+            if((hasAuthorizeAttribute || hasAuthorizeAttribute) && !allowAnonymous) 
             {
                 operation.Responses.Add("401", new OpenApiResponse { Description = "Unauthorized" });
                 operation.Responses.Add("403", new OpenApiResponse { Description = "Forbidden" });
@@ -27,8 +28,7 @@ namespace WebAPI.Swagger.Filters
                     operation.Security = new List<OpenApiSecurityRequirement>();
                 }
 
-                operation.Security.Add(new OpenApiSecurityRequirement()
-                {
+                operation.Security.Add(new OpenApiSecurityRequirement(){
                     {
                         new OpenApiSecurityScheme
                         {
@@ -39,11 +39,12 @@ namespace WebAPI.Swagger.Filters
                             },
                             Scheme = "oauth2",
                             Name = "Bearer",
-                            In = ParameterLocation.Header
+                            In = ParameterLocation.Header,
                         },
                         new List<string>()
                     }
-                });
+                }
+                );
             }
         }
     }

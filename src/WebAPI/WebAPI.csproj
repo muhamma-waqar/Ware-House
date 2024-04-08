@@ -41,8 +41,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="API\V1\" />
+    <Folder Include="Logging\Helper\" />
+    <Folder Include="Logging\Settings\" />
     <Folder Include="Versioning\Interfaces\" />
-    <Folder Include="Versioning\SwaggerConfiguration\" />
   </ItemGroup>
 
 </Project>

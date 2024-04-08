@@ -5,11 +5,11 @@
     /// </summary>
     [ExcludeFromCodeCoverage]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public class SwaggerGroupAttribute
+    public class SwaggerGroupAttribute : Attribute
     {
         public string GroupName { get; set; }
 
-        public SwaggerGroupAttribute(string groupName)
+        public SwaggerGroupAttribute(string groupName) 
         {
             GroupName = groupName;
         }

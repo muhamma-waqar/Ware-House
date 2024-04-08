@@ -9,33 +9,36 @@ namespace WebAPI.Swagger
 {
     internal static class SwaggerStartup
     {
-        public static void AddMySwagger(this IServiceCollection services, IConfiguration configuration)
+        public static void AddSwagger(this IServiceCollection services, IConfiguration configuration)
         {
             var swaggerSettings = configuration.GetMyOptions<SwaggerSettings>();
-            if(swaggerSettings.UseSwagger == false)
+
+            if(swaggerSettings.UseSwagger == false) 
             {
                 return;
             }
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1,", new OpenApiInfo { Title = swaggerSettings.ApiName, Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = swaggerSettings.ApiName, Version = "v1" });
+
                 c.AddSecurityDefinition(SecuritySchemeNames.ApiLogin, new OpenApiSecurityScheme
                 {
                     Type = SecuritySchemeType.OAuth2,
                     Flows = new OpenApiOAuthFlows
                     {
-                        Password = new OpenApiOAuthFlow
+                        Password = new OpenApiOAuthFlow()
                         {
                             TokenUrl = new Uri(swaggerSettings.LoginPath, UriKind.Relative)
                         }
                     }
                 });
 
+                // Prevent SwaggerGen from thrwoing exception when multiple DTOs from different namespace have the same type name.
                 c.CustomSchemaIds(x =>
                 {
                     var lastNamespaceSection = x.Namespace![(x.Namespace!.LastIndexOf('.') + 1)..];
-                    var genericParameters = string.Join(',', (IEnumerable<Type>)x.GetGenericArguments());
+                    var genericParameters = string.Join('.', (IEnumerable<Type>)x.GetGenericArguments());
 
                     return $"{lastNamespaceSection}.{x.Name}{(string.IsNullOrEmpty(genericParameters) ? null : "<" + genericParameters + ">")}";
 

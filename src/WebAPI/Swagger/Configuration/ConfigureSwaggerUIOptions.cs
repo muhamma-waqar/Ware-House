@@ -4,12 +4,11 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace WebAPI.Swagger.Configuration
 {
-    public class ConfigureSwaggerUIOptions: IConfigureOptions<SwaggerUIOptions>
+    internal class ConfigureSwaggerUIOptions : IConfigureOptions<SwaggerUIOptions>
     {
         private readonly IConfiguration _configuration;
 
-        public ConfigureSwaggerUIOptions(IConfiguration configuration) 
-            => _configuration = configuration;
+        public ConfigureSwaggerUIOptions(IConfiguration configuration) => _configuration = configuration;
 
         public void Configure(SwaggerUIOptions options)
         {
@@ -17,8 +16,7 @@ namespace WebAPI.Swagger.Configuration
 
             options.SwaggerEndpoint(
                 url: "/swagger/v1/swagger.json",
-                name: swaggerSetting.ApiName + "v1"
-                );
+                name: swaggerSetting.ApiName + "v1");
         }
     }
 }

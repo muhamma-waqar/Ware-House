@@ -1,7 +1,12 @@
-﻿using WebAPI.API;
+﻿using Application;
+using Application.Common.Behaviors;
+using Infrastructure;
+using WebAPI.API;
 using WebAPI.Authentication;
+using WebAPI.CORS;
 using WebAPI.ErrorHandling;
 using WebAPI.Swagger;
+using WebAPI.Versioning;
 
 namespace WebAPI
 {
@@ -11,15 +16,24 @@ namespace WebAPI
         protected IWebHostEnvironment Environment { get; set; }
 
         public Startup(IConfiguration configuration, IWebHostEnvironment environment)
-            => (Configuration, Environment) = (configuration, environment);
+            => (Configuration, Environment) = (configuration, environment); 
 
         public void ConfigureService(IServiceCollection services)
         {
             services.AddMyApi();
             services.AddMyApiAuthDeps();
             services.AddMyErrorHandling();
-            services.AddMySwagger(Configuration);
+            services.AddSwagger(Configuration);
+            services.AddMyVersioning();
+            services.AddMyCorsConfiguration(Configuration);
+            services.AddMyInfrastructureDependencies(Configuration, Environment);
+            services.AddMayApplicationDependencies();
+        }
 
+
+        public void Configure(IApplicationBuilder app)
+        {
+            // yaha say start karna ha.
         }
     }
 }

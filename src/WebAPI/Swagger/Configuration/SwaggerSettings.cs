@@ -6,6 +6,6 @@
         public string ApiName { get; init; } = null!;
         public bool UseSwagger { get; init; }
         [Required, MinLength(1)]
-        public string LoginPath { get; init; } = null!;
+        public string LoginPath { get; set; } = null!;
     }
 }
