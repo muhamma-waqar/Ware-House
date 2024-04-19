@@ -33,7 +33,7 @@ namespace WebAPI
 
         public void Configure(IApplicationBuilder app)
         {
-            // yaha say start karna ha.
+            app.UseMyRequestLogging  // is ki loggingStartup likh ra ta.
         }
     }
 }
