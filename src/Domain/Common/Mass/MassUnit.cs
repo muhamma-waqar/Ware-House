@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Common.Mass
 {
-    public record MassUnit
+    public record MassUnit : IEntity
     {
         public string Name { get; set; }
         public string Symbol { get; set; }
         public float ConversionRateToGram { get; set; }
+
+        public int Id {  get; set; }
 
         private MassUnit(string name, string symbol, float conversionRateToGram)
         {

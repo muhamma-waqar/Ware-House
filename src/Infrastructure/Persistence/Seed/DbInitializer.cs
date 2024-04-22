@@ -73,7 +73,7 @@ namespace Infrastructure.Persistence.Seed
 
         private static void SeedSampleData(ApplicationDbContext context)
         {
-            if(!context.Partners.Any() && !context.Users.Any())
+            if(!context.Partners.Any())
             {
                 var (products, partner) = DataGenerator.GenerateBaseEntities();
 

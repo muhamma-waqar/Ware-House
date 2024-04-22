@@ -24,7 +24,7 @@ namespace Application.Products.ProductStockValue
             return new StockValueDto()
             {
                 Amount = totalStockValue.Amount,
-                CurrencyCode = totalStockValue.Currency.Code
+                CurrencyCode = null!
             };
         }
     }

@@ -19,15 +19,15 @@ namespace Infrastructure
 
         public static void AddMyInfrastructureDependencies(this IServiceCollection services, IConfiguration configuration, IHostEnvironment env)
         {
-            Identity.Startup.ConfigueService(services, configuration);
-            Authentication.Startup.ConfigureServices(services, configuration);
+            //Identity.Startup.ConfigueService(services, configuration);
+            //Authentication.Startup.ConfigureServices(services, configuration);
             Persistence.Startup.ConfigurationServices(services, configuration, env);
             ApplicationDependencies.Startup.ConfigureServices(services, configuration);
         }
 
         public static void UseMyInfrastructure(this IApplicationBuilder app, IConfiguration configuration)
         {
-            Authentication.Startup.Configure(app);
+            //Authentication.Startup.Configure(app);
             Persistence.Startup.Configure(app, configuration);
         }
     }

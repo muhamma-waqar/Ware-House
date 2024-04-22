@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Domain.Common.Money
 {
-    public record Money
+    public record Money : IEntity
     {
         public decimal Amount { get; init; }
 
         [Required]
         public Currency Currency { get; init; }
 
+        public int Id {  get; init; }
+
+        public Money() { }
         public Money(decimal amount, Currency currency)
         {
             if(amount< 0) throw new ArgumentException("Value cannot be negative.", nameof(amount)); 

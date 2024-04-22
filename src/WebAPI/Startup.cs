@@ -5,6 +5,7 @@ using WebAPI.API;
 using WebAPI.Authentication;
 using WebAPI.CORS;
 using WebAPI.ErrorHandling;
+using WebAPI.Logging;
 using WebAPI.Swagger;
 using WebAPI.Versioning;
 
@@ -22,10 +23,10 @@ namespace WebAPI
         {
             services.AddMyApi();
             services.AddMyApiAuthDeps();
-            services.AddMyErrorHandling();
+            //services.AddMyErrorHandling();
             services.AddSwagger(Configuration);
-            services.AddMyVersioning();
-            services.AddMyCorsConfiguration(Configuration);
+            //services.AddMyVersioning();
+            //services.AddMyCorsConfiguration(Configuration);
             services.AddMyInfrastructureDependencies(Configuration, Environment);
             services.AddMayApplicationDependencies();
         }
@@ -33,7 +34,13 @@ namespace WebAPI
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMyRequestLogging  // is ki loggingStartup likh ra ta.
+          //  app.UseMyRequestLogging();  // is ki loggingStartup likh ra ta.
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseMyCorsConfiguration();
+            app.UseMySwagger(Configuration);
+            app.UseMyInfrastructure(Configuration);
+            app.UseMyApi();
         }
     }
 }

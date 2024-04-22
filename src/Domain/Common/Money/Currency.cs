@@ -12,6 +12,8 @@ namespace Domain.Common.Money
         public string Symbol { get; set; }
         public bool SymbolWellKnown { get; init; } = false;
 
+        private Currency() { }
+
         private static readonly IReadOnlyDictionary<string, Record> _lookup = new Dictionary<string, Record>()
         {
             ["USD"] = new Record("USD", "$", symbolWellKnown: true),

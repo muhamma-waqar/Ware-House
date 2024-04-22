@@ -17,19 +17,14 @@ namespace Infrastructure.Persistence
             service.AddSingleton(configuration.GetMyOptions<ApplicationDbSettings>());
             service.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetMyOptions<ConnectionStrings>().DefaultConnection,
-                    opts => opts.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
-                if (env.IsDevelopment())
-                {
-                    options.EnableSensitiveDataLogging();
-                }
+                options.UseSqlServer(configuration.GetConnectionString("Data Source=localhost\\SQLEXPRESS;Initial Catalog=wareHouse; Integrated Security=true;"));
             });
 
         }
 
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
         {
-            Seed.DbInitializer.SeedDatabase(app, configuration);
+            //   Seed.DbInitializer.SeedDatabase(app, configuration);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Application.Common.Dependencies.Services;
 using Domain.Common;
+using Domain.Common.Mass;
 using Domain.Common.Money;
 using Domain.Partners;
 using Domain.Products;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -57,6 +59,42 @@ namespace Infrastructure.Persistence.Context
                 .HavePrecision(precision: 18, scale: 4);
 
             configBuilder.Properties<Currency>();
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            // Configure the value objects of the application domain as EF Core owned types.
+            //builder.Owned<Money>();
+            //builder.Owned<Address>();
+            //builder.Owned<Mass>();
+            builder.Entity<Money>().Ignore(i => i.Currency);
+            builder.Entity<Mass>().HasKey(i => i.Id);
+            builder.Entity<Product>().HasOne(i => i.Mass);
+            builder.Entity<TransactionLine>().Ignore(i =>i.Product);
+            builder.Entity<TransactionLine>().Ignore(i => i.Transaction);
+            ConfigureSoftDeleteFilter(builder);
+
+            base.OnModelCreating(builder);
+        }
+
+        /// <summary>
+        /// Set global filter on all soft-deletable entities to exclude the ones which are 'deleted'.
+        /// </summary>
+        private static void ConfigureSoftDeleteFilter(ModelBuilder builder)
+        {
+            foreach (var softDeletableTypeBuilder in builder.Model.GetEntityTypes()
+                .Where(x => typeof(ISoftDeletable).IsAssignableFrom(x.ClrType)))
+            {
+                var parameter = Expression.Parameter(softDeletableTypeBuilder.ClrType, "p");
+
+                softDeletableTypeBuilder.SetQueryFilter(
+                    Expression.Lambda(
+                        Expression.Equal(
+                            Expression.Property(parameter, nameof(ISoftDeletable.DeleteAt)),
+                            Expression.Constant(null)),
+                        parameter)
+                );
+            }
         }
 
 

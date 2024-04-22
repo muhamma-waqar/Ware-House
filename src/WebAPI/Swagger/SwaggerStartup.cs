@@ -44,8 +44,8 @@ namespace WebAPI.Swagger
 
                 });
 
-                c.OperationFilter<SwaggerGroupFilter>();
-                c.OperationFilter<SwaggerAuthorizeFilter>();
+                //c.OperationFilter<SwaggerGroupFilter>();
+                //c.OperationFilter<SwaggerAuthorizeFilter>();
             });
 
             services.AddTransient<IConfigureOptions<SwaggerUIOptions>, ConfigureSwaggerUIOptions>();

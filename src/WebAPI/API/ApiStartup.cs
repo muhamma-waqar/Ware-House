@@ -12,7 +12,7 @@ namespace WebAPI.API
                 .AddJsonOptions(c => c.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
         }
 
-        public static void UseMayApi(this IApplicationBuilder app)
+        public static void UseMyApi(this IApplicationBuilder app)
         {
             app.UseEndpoints(endpoints =>
             {

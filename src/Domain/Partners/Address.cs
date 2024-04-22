@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Partners
 {
-    public record Address
+    public record Address : IEntity
     {
 
         [Required, MinLength(1), MaxLength(100)]
@@ -16,6 +17,8 @@ namespace Domain.Partners
 
         [Required, MinLength(1), MaxLength(100)]
         public string ZipCode { get; init; }
+
+        public int Id {  get; init; }
 
         private Address() 
         {

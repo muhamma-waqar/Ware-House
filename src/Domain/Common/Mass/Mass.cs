@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,10 +10,13 @@ namespace Domain.Common.Mass
 {
     public record Mass
     {
+        [Required]
+        public int Id { get; set; }
         public float Value { get; set; }
 
         [Required]
-        public MassUnit Unit { get; set; }
+        public MassUnit Unit { get; set; } = default!;
+        private Mass() { }
 
         public Mass(float value, MassUnit unit) 
         {
